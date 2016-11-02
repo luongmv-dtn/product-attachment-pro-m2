@@ -1,0 +1,5 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="LuongMv_FileUploader::fileuploader" title="Manage Attachments" module="LuongMv_FileUploader" sortOrder="100" parent="Magento_Catalog::catalog" action="fileuploader/index/" resource="LuongMv_FileUploader::fileuploader"/>
+    </menu>
+</config>

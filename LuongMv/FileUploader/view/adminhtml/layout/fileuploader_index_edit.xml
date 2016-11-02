@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="jquery/fileUploader/css/jquery.fileupload-ui.css"/>
+    </head>
+    <update handle="editor"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="LuongMv\FileUploader\Block\Adminhtml\Form\Edit" name="form_post_edit"/>
+        </referenceContainer>
+        <referenceContainer name="left">
+            <block class="LuongMv\FileUploader\Block\Adminhtml\Form\Edit\Tabs" name="form_post_edit_tabs">
+                <block class="LuongMv\FileUploader\Block\Adminhtml\Form\Edit\Tab\Main" name="form_post_edit_tab_main"/>
+                    <action method="addTab">
+                        <argument name="name" xsi:type="string">main_section</argument>
+                        <argument name="block" xsi:type="string">form_post_edit_tab_main</argument>
+                    </action>
+                <!-- This code is added for products grid -->
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">attachment_products</argument>
+                    <argument name="block" xsi:type="array">
+                        <item name="label" xsi:type="string">Select Products</item>
+                        <item name="title" xsi:type="string">Select Products</item>
+                        <item name="url" xsi:type="helper" helper="LuongMv\FileUploader\Helper\Data::getProductsGridUrl"></item>
+                        <item name="class" xsi:type="string">ajax</item>
+                    </argument>
+                </action>
+                <!-- This code is added for products grid -->
+            </block>
+        </referenceContainer>
+    </body>
+</page>

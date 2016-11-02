@@ -1,0 +1,30 @@
+<?php
+$attachments = $block->getProductAttachments();
+?>
+<div class="content-wrapper">
+  <?php  if (count($attachments) > 0): ?>
+<ul class="list">
+<?php foreach ($attachments as $attachment): ?>
+    <li>
+        <div class="label"><?php echo $attachment['file']; ?></div>
+        <?php if (!$attachment['content']): ?>
+           <div class="data"><?php echo $attachment['content']; ?></div>
+         <?php endif;?>
+    </li>
+<?php endforeach; ?>
+    <li class="dealer-login">
+        <a class="prod-attach" target="_blank" title="" href="http://mediadb.dirt-devil.de/login">
+            <span class="attach-title"><?php echo __("Dealer-Login for further information"); ?></span>
+        </a>
+    </li>
+    </ul>
+  <?php else: ?>
+      <ul class="manuals-list">
+          <li class="dealer-login">
+              <a class="prod-attach" target="_blank" title="" href="http://mediadb.dirt-devil.de/login">
+                  <span class="attach-title"><?php echo __("Dealer-Login for further information"); ?></span>
+              </a>
+          </li>
+      </ul>
+  <?php endif; ?>
+</div>
